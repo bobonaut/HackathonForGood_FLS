@@ -1,12 +1,15 @@
 import random
 
-image_percentage_chance = 0.7
+image_percentage_chance = 0.85
 
 
 def decide(img_assesment, txt_assesment):
-    if img_assesment == True and txt_assesment == True:
+    print("img " + str(img_assesment))
+    print("itxt " + str(txt_assesment))
+
+    if img_assesment and txt_assesment:
         return True
-    if img_assesment == False and txt_assesment == False:
+    if not img_assesment and not txt_assesment:
         return False
     if random.random() < image_percentage_chance:
         return img_assesment

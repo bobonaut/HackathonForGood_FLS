@@ -79,7 +79,7 @@ ADD models/ ${PA_MODEL_PATH}
 ADD *.py ${PA_BASE_PATH}/
 ADD templates/ ${PA_TEMPLATE_PATH}
 
-RUN chmod +x ${PA_BASE_PATH}/app.py
+RUN chmod +x ${PA_BASE_PATH}/*.py
 RUN chmod 777 ${PA_TEMPLATE_PATH}/*
 
 WORKDIR ${PA_BASE_PATH}

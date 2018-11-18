@@ -1,13 +1,14 @@
 import urllib.request
 import os
 import shutil
+import tempfile
 import assessment_service
 
 from flask import Flask, request, render_template
 
 index_path = 'index.html'
 
-TEMP_DIRIMAGE_TO_ANALYZE = os.path.join("images", "nato_bad_propaganda")
+TEMP_DIRIMAGE_TO_ANALYZE = tempdir = tempfile.mkdtemp()
 
 app = Flask(__name__)
 
@@ -46,4 +47,4 @@ class Response:
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(8080))
+    app.run(host='0.0.0.0', port=int(8080), debug=False)

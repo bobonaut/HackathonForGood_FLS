@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-
+import tensorflow as tf
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.python.keras.models import model_from_json
 from tensorflow.python.keras.optimizers import Adam
+from tensorflow import Graph, Session
+from keras import backend as K
 from PIL import ImageFile
 from shutil import copyfile
 import tempfile
@@ -32,10 +34,12 @@ def load_model():
     loaded_model = model_from_json(loaded_model_json)
     loaded_model.load_weights(model_weights_file_path)
     loaded_model.compile(loss='binary_crossentropy', optimizer=Adam(lr=1e-5), metrics=['accuracy'])
+    loaded_model._make_predict_function()
     return loaded_model
 
 
 model = load_model()
+graph = tf.get_default_graph()
 
 
 def assert_file_exists(file_path):
@@ -62,7 +66,9 @@ def is_negative(source_file_path):
         batch_size=batch_size,
         class_mode='binary')
 
-    result = model.evaluate_generator(test_generator, nb_test_samples)
+    global graph
+    with graph.as_default():
+        result = model.evaluate_generator(test_generator, nb_test_samples)
 
     # cleanup
     shutil.rmtree(tempdir)

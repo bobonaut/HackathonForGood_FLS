@@ -21,7 +21,7 @@
       </form>
       <br>
       {% for result in results %}
-          <h4>Probability that image contains negative propaganda: {{not result}}%</h4>
+          <h4>Probability that image contains negative propaganda: {{not result.chance}}</h4>
           <img src="{{result.imageurl}}" alt="{{ imagename }}"  width="500">
       {% endfor %}
     </div>
