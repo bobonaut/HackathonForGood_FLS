@@ -6,6 +6,7 @@ RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
     # install essentials
     build-essential \
+    wget \
     g++ \
     git \
     openssh-client \
@@ -57,7 +58,8 @@ RUN pip3 --no-cache-dir install \
     pytesseract \
     nltk \
     np_utils \
-    pandas
+    pandas \
+    flask
 
 RUN mkdir -p /tmp/test_script/images/nato_bad_propaganda
 
@@ -65,18 +67,25 @@ ARG PA_BASE_PATH=/usr/local/propaganda_assessment
 ARG PA_MODEL_PATH=${BASE_PATH}/models
 
 # install your app
-ADD images/ ${PA_BASE_PATH}/images
-ADD models/ ${PA_MODEL_PATH}
 
 ENV PA_BASE_PATH=${PA_BASE_PATH}
+ENV PA_TEMPLATE_PATH=${PA_BASE_PATH}/templates
 ENV PROPAGANDA_CNN_MODEL=${PA_MODEL_PATH}/propaganda_cnn_model.json
 ENV PROPAGANDA_CNN_MODEL_WEIGHTS=${PA_MODEL_PATH}/propaganda_cnn_model_weights.h5
+ENV PROPAGANDA_NLP_MODEL=${PA_MODEL_PATH}/propaganda_nlp_model.csv
 
-ADD *.py /tmp/test_script/
+ADD images/ ${PA_BASE_PATH}/images
+ADD models/ ${PA_MODEL_PATH}
+ADD *.py ${PA_BASE_PATH}/
+ADD templates/ ${PA_TEMPLATE_PATH}
 
-RUN chmod +x /tmp/test_script/*.py
+RUN chmod +x ${PA_BASE_PATH}/app.py
+RUN chmod 777 ${PA_TEMPLATE_PATH}/*
 
+WORKDIR ${PA_BASE_PATH}
+
+EXPOSE 8080
 
 # default command
-#CMD ["/tmp/test_script/analyze_text.py"]
-CMD ["/tmp/test_script/process_image_cnn.py"]
+CMD python3 app.py
+

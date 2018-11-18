@@ -8,6 +8,7 @@ import pytesseract
 import re
 from nltk.corpus import brown
 import nltk
+import os
 
 nltk.download('brown')
 word_list = brown.words()
@@ -23,7 +24,7 @@ class ImageContent:
 def to_file_name(directory, file_name):
     if directory.endswith('/'):
         directory = directory[:-1]
-    return directory + '/' + file_name
+    return os.path.join(directory, file_name)
 
 
 def ocr(directory, image_name):

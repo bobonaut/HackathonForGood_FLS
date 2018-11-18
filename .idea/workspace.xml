@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56493fce-16ea-4bfa-ab87-22a8e8160ba9" name="Default Changelist" comment="UNBOUND Sergeys changes for text anallyzer&#10;&#10;Changes:&#10;- Added propaganda_model.csv for processing&#10;- Updated analyze_text.py with changes from Sergey&#10;- Cleaned up Dockerfile a bit">
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binary_decider.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/test/img_2_.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/test/img_47_.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/test/img_48_.jpg" afterDir="false" />
@@ -9,11 +12,13 @@
       <change afterPath="$PROJECT_DIR$/images/test/img_50_.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/test/img_51_.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/test/img_52_.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/propaganda_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/models/propaganda_cnn_model_weights.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/propaganda_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/propaganda_cnn_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_image_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_image_cnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze_text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/extract_text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/propaganda_model.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/propaganda_nlp_model.csv" afterDir="false" />
     </list>
     <list id="121147e1-a7e0-46a1-b362-407937b5a8c6" name="DO NOT COMMIT" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,18 +39,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Dockerfile" value="994" />
+          <entry key="Dockerfile" value="1340" />
           <entry key="dummy" value="47" />
-          <entry key="py" value="5643" />
+          <entry key="html" value="110" />
+          <entry key="py" value="6204" />
           <entry key="py3-tf-cpu" value="3" />
-          <entry key="txt" value="935" />
+          <entry key="txt" value="1089" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dockerfile" value="988" />
-          <entry key="PLAIN_TEXT" value="969" />
-          <entry key="Python" value="5643" />
+          <entry key="Dockerfile" value="1334" />
+          <entry key="HTML" value="110" />
+          <entry key="PLAIN_TEXT" value="1123" />
+          <entry key="Python" value="6204" />
           <entry key="Scratch" value="22" />
         </counts>
       </usages-collector>
@@ -53,10 +60,11 @@
         <counts>
           <entry key="Dockerfile" value="2" />
           <entry key="csv" value="1" />
-          <entry key="ipynb" value="3" />
+          <entry key="html" value="1" />
+          <entry key="ipynb" value="4" />
           <entry key="jpg" value="3" />
           <entry key="json" value="2" />
-          <entry key="py" value="29" />
+          <entry key="py" value="32" />
           <entry key="py3-tf-cpu" value="1" />
           <entry key="pyi" value="2" />
           <entry key="txt" value="3" />
@@ -65,11 +73,12 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Dockerfile" value="1" />
-          <entry key="IPNB" value="3" />
+          <entry key="HTML" value="1" />
+          <entry key="IPNB" value="4" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="29" />
+          <entry key="Python" value="32" />
           <entry key="PythonStub" value="2" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -78,20 +87,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extract_text.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-927">
-              <caret selection-end-line="1" />
+            <state relative-caret-position="306">
+              <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
+              <folding>
+                <marker date="1542538405167" expanded="true" signature="47:645" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extract_text.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" />
+              <folding>
+                <element signature="e#120#138#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_image_cnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="56" />
               <folding>
                 <element signature="e#24#98#0" expanded="true" />
               </folding>
@@ -100,19 +124,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tempfile.py">
+        <entry file="file://$PROJECT_DIR$/binary_decider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="342" column="4" selection-start-line="342" selection-start-column="4" selection-end-line="342" selection-end-column="4" />
+            <state relative-caret-position="30">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ntpath.py">
+        <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="344">
+              <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assessment_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,19 +171,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyze_text.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-267">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="480">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding>
-                <marker date="1542530431499" expanded="false" signature="47:634" ph="..." />
+                <element signature="e#24#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,6 +205,7 @@
       <find>open(</find>
       <find>io</find>
       <find>test_dir</find>
+      <find>shutil</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,12 +221,16 @@
         <option value="$PROJECT_DIR$/evaluateModel.ipynb" />
         <option value="$PROJECT_DIR$/models/propaganda_model.json" />
         <option value="$PROJECT_DIR$/Dockerfile.py3-tf-cpu" />
-        <option value="$PROJECT_DIR$/extract_text.py" />
         <option value="$PROJECT_DIR$/TextAnalyze_preTrainedVector.ipynb" />
         <option value="$PROJECT_DIR$/models/propaganda_model.csv" />
-        <option value="$PROJECT_DIR$/analyze_text.py" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/process_image_cnn.py" />
+        <option value="$PROJECT_DIR$/binary_decider.py" />
+        <option value="$PROJECT_DIR$/extract_text.py" />
+        <option value="$PROJECT_DIR$/assessment_service.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/analyze_text.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
       </list>
     </option>
   </component>
@@ -208,18 +255,7 @@
             <path>
               <item name="HackathonForGood" type="b2602c69:ProjectViewProjectNode" />
               <item name="HackathonForGood" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HackathonForGood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HackathonForGood" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="nato_bad_propaganda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HackathonForGood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HackathonForGood" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.process_image_cnn">
+  <component name="RunManager" selected="Docker.Dockerfile-hackathon">
     <configuration name="analyze_text" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="HackathonForGood" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,15 +355,23 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+    <configuration name="Dockerfile-hackathon" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
           <option name="JSONFilePath" value="" />
           <option name="command" value="" />
           <option name="commandLineOptions" value="" />
-          <option name="containerName" value="" />
+          <option name="containerName" value="propaganda_assessment" />
           <option name="entrypoint" value="" />
           <option name="imageTag" value="" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
           <option name="sourceFilePath" value="Dockerfile" />
           <option name="startBrowserSettings">
             <browser url="http://127.0.0.1" />
@@ -337,14 +381,14 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.Dockerfile-hackathon" />
       <item itemvalue="Python.tesseract_test" />
-      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.analyze_text" />
       <item itemvalue="Python.process_image_cnn" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.Dockerfile-hackathon" />
         <item itemvalue="Python.process_image_cnn" />
         <item itemvalue="Python.analyze_text" />
         <item itemvalue="Python.tesseract_test" />
@@ -384,17 +428,24 @@
       <option name="project" value="LOCAL" />
       <updated>1542502325313</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="UNBOUND Updated process_image_cnn python script&#10;&#10;Changes:&#10;- moved cnn propaganda to a binairy function&#10;- updated docker to user environment variables">
+      <created>1542531390075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542531390075</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="983" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994401" visible="true" weight="0.20940171" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994401" visible="true" weight="0.20940171" />
       <window_info id="Structure" order="1" sideWeight="0.5005599" side_tool="true" weight="0.20695971" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" weight="0.32884398" />
+      <window_info active="true" anchor="bottom" id="Docker" sideWeight="0.4993895" visible="true" weight="0.44332212" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884398" />
@@ -403,9 +454,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32884398" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993895" weight="0.32884398" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.38608307" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50061053" side_tool="true" weight="0.57126826" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -413,6 +464,55 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994401" visible="true" weight="0.20940171" />
+      <window_info id="Structure" order="1" sideWeight="0.5005599" side_tool="true" weight="0.20695971" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" visible="true" weight="0.57126826" />
+      <window_info anchor="bottom" id="Messages" order="1" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32884398" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.37261504" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.5106383" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32884398" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.38608307" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -421,10 +521,18 @@
     <MESSAGE value="UNBOUND Building docker image and added process image ccn&#10;&#10;Changes:&#10;- Added process image cnn python script for initially importing the model file&#10;- No longer using base image for tensorflow/keras&#10;- Updated the dockerfile build to build the tensorflow 1.12.0&#10;- Updated the dockerfile build to build the keras version 2.2.4" />
     <MESSAGE value="UNBOUND Added text analyzer&#10;&#10;Changes:&#10;- Added propaganda text model&#10;- Added analyze text py" />
     <MESSAGE value="UNBOUND Sergeys changes for text anallyzer&#10;&#10;Changes:&#10;- Added propaganda_model.csv for processing&#10;- Updated analyze_text.py with changes from Sergey&#10;- Cleaned up Dockerfile a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="UNBOUND Sergeys changes for text anallyzer&#10;&#10;Changes:&#10;- Added propaganda_model.csv for processing&#10;- Updated analyze_text.py with changes from Sergey&#10;- Cleaned up Dockerfile a bit" />
+    <MESSAGE value="UNBOUND Updated process_image_cnn python script&#10;&#10;Changes:&#10;- moved cnn propaganda to a binairy function&#10;- updated docker to user environment variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="UNBOUND Updated process_image_cnn python script&#10;&#10;Changes:&#10;- moved cnn propaganda to a binairy function&#10;- updated docker to user environment variables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extract_text.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -666,13 +774,6 @@
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/re.pyi">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextAnalyze_preTrainedVector.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/_io.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1138">
@@ -680,7 +781,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/propaganda_model.csv">
+    <entry file="file://$PROJECT_DIR$/models/propaganda_nlp_model.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2835">
           <caret line="190" column="56" selection-start-line="190" selection-start-column="56" selection-end-line="190" selection-end-column="56" />
@@ -696,13 +797,6 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/shutil.pyi">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyze_text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file:///usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -732,32 +826,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/test/img_2_.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/binary_decider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextAnalyze_preTrainedVector.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/extract_text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-927">
+        <state>
           <caret selection-end-line="1" />
+          <folding>
+            <element signature="e#120#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assessment_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_image_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="56" />
+          <folding>
+            <element signature="e#24#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
           <folding>
-            <marker date="1542530431499" expanded="false" signature="47:634" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/test/img_2_.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_image_cnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
-          <folding>
-            <element signature="e#24#98#0" expanded="true" />
+            <marker date="1542538405167" expanded="true" signature="47:645" ph="..." />
           </folding>
         </state>
       </provider>
