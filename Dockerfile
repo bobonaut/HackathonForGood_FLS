@@ -1,5 +1,4 @@
 FROM debian:stretch
-MAINTAINER gw0 [http://gw.tnode.com/] <gw.2018@ena.one>
 
 # install debian packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -57,19 +56,19 @@ RUN pip3 --no-cache-dir install \
     scipy \
     pytesseract \
     nltk \
-    np_utils
+    np_utils \
+    pandas
 
 RUN mkdir -p /tmp/test_script/images/nato_bad_propaganda
 
 # install your app
 ADD images/ /tmp/test_script/images
 ADD models/ /tmp/models/
-#ADD extract_text.py /tmp/test_script/
-ADD process_image_cnn.py /tmp/test_script/
 
-#RUN chmod +x /tmp/test_script/process_image_cnn.py
-RUN chmod +x /tmp/test_script/process_image_cnn.py
+ADD *.py /tmp/test_script/
+
+RUN chmod +x /tmp/test_script/*.py
 
 
 # default command
-CMD ["/tmp/test_script/process_image_cnn.py"]
+CMD ["/tmp/test_script/analyze_text.py"]
