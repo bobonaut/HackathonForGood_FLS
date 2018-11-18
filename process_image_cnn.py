@@ -4,34 +4,67 @@ from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.python.keras.models import model_from_json
 from tensorflow.python.keras.optimizers import Adam
 from PIL import ImageFile
+from shutil import copyfile
+import tempfile
+import os.path
+import os
+import shutil
 
+# Prevent errors during image loading
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-json_file = open("/tmp/models/propaganda_model.json", "r")
-loaded_model_json = json_file.read()
-json_file.close()
+model_file_path = os.environ.get('PROPAGANDA_CNN_MODEL')
+model_weights_file_path = os.environ.get('PROPAGANDA_CNN_MODEL_WEIGHTS')
 
-loaded_model = model_from_json(loaded_model_json)
-
-loaded_model.load_weights("/tmp/models/propaganda_model.h5")
-
-loaded_model.compile(loss='binary_crossentropy',
-              optimizer=Adam(lr=1e-5),
-              metrics=['accuracy'])
-
-test_dir = '/tmp/test_script/images/'
+neutral_or_positive_classifier = 'nato_neutral_or_positive_propaganda'
+negative_classifier = 'nato_bad_propaganda'
 
 img_width, img_height = 32, 32
 batch_size = 16
 nb_test_samples = 1
 
-datagen = ImageDataGenerator(rescale=1.0 / 255)
+json_file = open(model_file_path, "r")
+loaded_model_json = json_file.read()
+json_file.close()
 
-test_generator = datagen.flow_from_directory(
-    test_dir,
-    target_size=(img_width, img_height),
-    batch_size=batch_size,
-    class_mode='binary')
 
-scores = loaded_model.evaluate_generator(test_generator, nb_test_samples)
-print("accuracy: %.2f%%" % (scores[1]*100))
+def load_model():
+    loaded_model = model_from_json(loaded_model_json)
+    loaded_model.load_weights(model_weights_file_path)
+    loaded_model.compile(loss='binary_crossentropy', optimizer=Adam(lr=1e-5), metrics=['accuracy'])
+    return loaded_model
+
+
+model = load_model()
+
+
+def assert_file_exists(file_path):
+    return os.path.isfile(file_path)
+
+
+def is_negative(source_file_path):
+    assert_file_exists(source_file_path)
+    file_basename = os.path.basename(source_file_path)
+
+    tempdir = tempfile.mkdtemp()
+    output_directory = os.path.join(tempdir, negative_classifier)
+    os.mkdir(output_directory)
+
+    result_processing_file_name = os.path.join(output_directory, file_basename)
+
+    copyfile(source_file_path, result_processing_file_name)
+
+    datagen = ImageDataGenerator(rescale=1.0 / 255)
+
+    test_generator = datagen.flow_from_directory(
+        tempdir,
+        target_size=(img_width, img_height),
+        batch_size=batch_size,
+        class_mode='binary')
+
+    result = model.evaluate_generator(test_generator, nb_test_samples)
+
+    # cleanup
+    shutil.rmtree(tempdir)
+
+    return True if result[1] == 1.0 else False

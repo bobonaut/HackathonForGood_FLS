@@ -61,9 +61,16 @@ RUN pip3 --no-cache-dir install \
 
 RUN mkdir -p /tmp/test_script/images/nato_bad_propaganda
 
+ARG PA_BASE_PATH=/usr/local/propaganda_assessment
+ARG PA_MODEL_PATH=${BASE_PATH}/models
+
 # install your app
-ADD images/ /tmp/test_script/images
-ADD models/ /tmp/models/
+ADD images/ ${PA_BASE_PATH}/images
+ADD models/ ${PA_MODEL_PATH}
+
+ENV PA_BASE_PATH=${PA_BASE_PATH}
+ENV PROPAGANDA_CNN_MODEL=${PA_MODEL_PATH}/propaganda_cnn_model.json
+ENV PROPAGANDA_CNN_MODEL_WEIGHTS=${PA_MODEL_PATH}/propaganda_cnn_model_weights.h5
 
 ADD *.py /tmp/test_script/
 
@@ -71,4 +78,5 @@ RUN chmod +x /tmp/test_script/*.py
 
 
 # default command
-CMD ["/tmp/test_script/analyze_text.py"]
+#CMD ["/tmp/test_script/analyze_text.py"]
+CMD ["/tmp/test_script/process_image_cnn.py"]
